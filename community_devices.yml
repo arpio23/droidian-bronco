@@ -1,0 +1,12 @@
+lenovo_thinkphone:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 33
+  use_internal_repository: false
+
+  packages:
+    - adaptation-droidian-bronco
+    - adaptation-bronco-configs
+    - droidian-camera
