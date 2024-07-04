@@ -1,7 +1,7 @@
 lenovo_thinkphone:
   type: image
   arch: arm64
-  edition: [phosh]
+  edition: [phosh, cutie]
   variant: phone
   apilevel: 32
   use_internal_repository: false
