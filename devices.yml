@@ -7,6 +7,10 @@
     - droidian-devtools
     - adaptation-hybris-devtools
 
+.adaptation_generic_packages:
+  packages: &adaptation_generic_packages
+    - adaptation-android-generic
+
 .fxtec_pro1_packages:
   packages: &fxtec_pro1_packages
     - adaptation-fxtec-pro1
@@ -37,6 +41,11 @@
     - adaptation-volla-yggdrasil
     - adaptation-volla-yggdrasil-configs
 
+.xiaomi_miatoll_packages:
+  packages: &xiaomi_miatoll_packages
+    - adaptation-xiaomi-miatoll
+    - adaptation-miatoll-configs
+
 ########################################################################
 # Recovery-flashable rootfses                                          #
 ########################################################################
@@ -48,6 +57,8 @@ rootfs:
   variant: phone
   apilevel: [28, 29, 30, 32, 33]
 
+  packages: *adaptation_generic_packages
+
   bundles:
     # Developer tools bundle
     - name: droidian-devtools
@@ -55,18 +66,6 @@ rootfs:
       apilevel: any
       only_stable: yes
       packages: *devtools_packages
-
-    # F(x)tec Pro1
-    - name: droidian-adaptation-fxtec-pro1
-      arch: arm64
-      apilevel: 28
-      packages: *fxtec_pro1_packages
-
-    # Sony Xperia 5
-    - name: droidian-adaptation-sony-bahamut
-      arch: arm64
-      apilevel: 30
-      packages: *sony_bahamut_packages
 
 ########################################################################
 # Device specific images                                               #
@@ -147,3 +146,17 @@ volla_mimameid:
   apilevel: 30
 
   packages: *volla_mimameid_packages
+
+#
+# Xiaomi
+#
+
+# Xiaomi Redmi Note 9S/9 Pro/9 Pro Max/M2 Pro (miatoll)
+xiaomi_miatoll:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 29
+
+  packages: *xiaomi_miatoll_packages
