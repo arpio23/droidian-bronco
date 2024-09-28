@@ -1,7 +1,7 @@
 lenovo_thinkphone:
   type: image
   arch: arm64
-  edition: [phosh, cutie]
+  edition: [phosh, cutie, noui]
   variant: phone
   apilevel: 32
   use_internal_repository: false
@@ -9,5 +9,3 @@ lenovo_thinkphone:
   packages:
     - adaptation-droidian-bronco
     - adaptation-bronco-configs
-    - linux-bootimage-5.10.198-android12-11-common-5.10-android12
-    - droidian-camera
