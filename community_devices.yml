@@ -1,7 +1,38 @@
+.devtools_packages:
+  packages: &devtools_packages
+    - droidian-devtools
+    - adaptation-hybris-devtools
+
+.adaptation_generic_packages:
+  packages: &adaptation_generic_packages
+    - adaptation-android-generic
+
+.fxtec_pro1x_packages:
+  packages: &fxtec_pro1x_packages
+    - adaptation-fxtec-pro1x
+    - adaptation-fxtec-pro1x-configs
+
+rootfs:
+  type: rootfs
+  arch: [arm64]
+  edition: plamo
+  variant: phone
+  apilevel: [28, 29, 30, 32, 33]
+
+  packages: *adaptation_generic_packages
+
+  bundles:
+    # Developer tools bundle
+    - name: droidian-devtools
+      arch: any
+      apilevel: any
+      only_stable: yes
+      packages: *devtools_packages
+
 lenovo_thinkphone:
   type: image
   arch: arm64
-  edition: [phosh, noui]
+  edition: plamo
   variant: phone
   apilevel: 32
   use_internal_repository: false
@@ -9,3 +40,13 @@ lenovo_thinkphone:
   packages:
     - adaptation-droidian-bronco
     - adaptation-bronco-configs
+
+# F(x)tec Pro1-X (qx1050)
+fxtec_pro1x:
+  type: image
+  arch: arm64
+  edition: plamo
+  variant: phone
+  apilevel: 30
+
+  packages: *fxtec_pro1x_packages

@@ -1,0 +1,4 @@
+deb http://production.repo.droidian.org/ trixie main
+deb http://droidian.g.droidian.org/next-upgrade-6-2/ trixie main
+deb http://droidian-wayfire.repo.droidian.org/next-upgrade-0-9-0/ trixie main
+deb http://droidian-droidian-meta.repo.droidian.org/next-plamo-wf/ trixie main
