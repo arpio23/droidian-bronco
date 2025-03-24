@@ -7,5 +7,5 @@ lenovo_thinkphone:
   use_internal_repository: false
 
   packages:
-    - adaptation-droidian-bronco
-    - adaptation-bronco-configs
+    - adaptation-lenovo-bronco
+    - adaptation-lenovo-bronco-configs
